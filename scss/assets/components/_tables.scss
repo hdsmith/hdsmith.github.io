@@ -1,0 +1,130 @@
+.tableDefault {
+  width:100%;
+  font-size: .7125rem;
+  background:#fff;
+  height:12.25rem;
+  @include mq($from: tablet) {
+    border-collapse: separate;
+    border-spacing: 1px;
+  }
+  @include mq($from: wide) {
+    font-size: .8125rem;
+  }
+  th {
+    /*text-align: left !important;*/
+    &.sort:hover {
+      background:darken(#666666,5%);
+      cursor: pointer;
+      color:white;
+    }
+    &.ascending {
+      background:darken(#666666,5%);
+      &:after {
+        font-family: FontAwesome;
+         content: "\f106";
+         display: inline-block;
+         padding-left:.3125rem;
+         vertical-align: middle;
+      }
+    }
+    &.descending {
+      background:darken(#666666,5%);
+      &:after {
+        font-family: FontAwesome;
+         content: "\f107";
+         display: inline-block;
+         padding-left:.3125rem;
+         vertical-align: middle;
+      }
+    }
+    span {
+      display: none;
+      @include mq($from: wide) {display:inline;}
+    }
+  }
+  th, td {
+    padding: .3rem .5rem;
+    text-align: center;
+    white-space: nowrap;
+    @include mq($from: tablet) {
+      padding: .5rem .8rem;
+    }
+    i.fa {
+      font-size: 1rem; 
+      color: $textLight;
+    }
+    input {display: block; margin:0 auto;}
+    &.textLeft {text-align: left}
+    &.textCenter {text-align: center}
+    &.textRight {text-align: right;}
+  }
+  thead {
+    border: solid 1px #666;
+    border-bottom: none;
+    background-color: #666;
+    color: $white;
+  }
+  tbody {
+    border:solid 1px #ddd;
+    border-top:none;
+    min-height: 12rem;
+    tr {
+      &:nth-child(even) {background: #f2f2f2;}
+      &:hover {
+        background:$lightBlue;
+        cursor: pointer; 
+        td {color: $white;}
+        i.fa {color:$white;}
+      } 
+      &.row-selected {
+        background:$lightBlue;
+        td {
+          color:$white;
+        }
+      }
+      &.no-history {
+        background: $white;
+        cursor: default;
+
+        td {
+          font-size: 1rem;
+          font-style: italic;
+          border:solid 1px #ddd;
+          border-top:none;
+          min-height: 12rem;
+        }
+        &:hover {
+          td {color:$textGrey;}
+        }
+      }
+      &.isError {
+        td {
+          &:first-child {
+            border-left:solid 4px $errorRed;
+            i.fa {margin-left: -4px;}
+          }
+          color: $errorRed;
+          font-style: italic;
+          i.fa {
+            color: $errorRed;
+          }
+        }
+      }
+    }
+  }
+}
+.tableWrapper {
+  width:100%;
+  overflow: auto;
+}
+.table_disclaimer {
+  font-family:"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .7rem;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  padding-left: .3125rem;
+}
+  

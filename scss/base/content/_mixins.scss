@@ -1,0 +1,16 @@
+@mixin clearfix  {
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+@mixiin zero {
+  margin:0;
+  padding:0;
+}
+
+@mixin invalid {
+  background-color: #fdfae7;
+  color:#C43131;
+}

@@ -1,0 +1,48 @@
+.item_pane {
+  /*background: hotpink;*/
+  font-size: .9375rem;
+  line-height: 1.3;
+  /* Grid */
+  @include span(14 of 14);
+  @include mq($from: desktop) {
+    @include span(9 of 14);
+  }
+  @include mq($from: wide) {
+    @include span(7 of 14);
+  }
+  img {
+      max-width:100%;
+      display: none;
+      margin:0 auto 1.5rem;
+      @include span(5 of 14);
+      width: auto;
+      max-height: 150px;
+      @include mq($from: tablet) {
+        display:block;
+      }
+    } 
+  .item_info {
+    margin-bottom: .8125rem;
+    @include span(14 of 14);
+    @include mq($from: tablet) {
+      @include span(8 of 14);
+      padding-left: 1.25rem;
+    }
+  }
+  h4 {
+    margin: 0;
+    color: $brandGreenPale;
+    font-weight: 400;
+    a {
+      color: $brandGreenPale;
+      text-decoration: none;
+      &:hover {
+        color: lighten($brandGreenPale, 10%);
+      }
+    }
+  }
+  span {
+    font-size: .8125rem;
+    padding-right: .5rem;
+  }
+}

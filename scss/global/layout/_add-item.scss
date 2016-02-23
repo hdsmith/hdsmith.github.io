@@ -1,0 +1,21 @@
+#container {
+  .add_item {
+    @include span(14 of 14);
+    padding-left: .8125rem;
+    padding-right: .8125rem;
+    min-height: calc(50vh - 159px); /* 159px = height of page title and change account menu on mobile */
+    @include mq($from: tablet) {
+      @include span(14 of 14);
+      padding-left: .8125rem;
+      padding-right: .8125rem;
+      min-height: calc(50vh - 122px); /* 122px = height of page title and change account menu on tablet */
+    }
+    @include mq($from: desktop) {
+      min-height: calc(60vh - 178px); /* 178px = height of page title and change account menu on desktop */
+    }
+    @import "item-lookup";
+    @import "item-pane";
+    @import "item-history";
+    @import "item-entry-form";
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "hdsmith.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hdsmith/hdsmith.github.io",
+  "authors": [
+    "eddieebeling <eddie.ebeling@hdsmith.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-mq": "~3.2.6"
+  },
+  "devDependencies": {
+    "font-awesome": "~4.5.0",
+    "foundation": "~5.5.3",
+    "susy": "~2.2.12"
+  }
+}

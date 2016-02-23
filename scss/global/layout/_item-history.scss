@@ -1,0 +1,12 @@
+.item_history {
+  padding-left:0 !important;
+  padding-right:0 !important;
+  h5 {margin-bottom:.5rem;}
+  @include span(14 of 14);
+  @include mq($from: desktop) {
+    @include span(8 of 14);
+  }
+  @include mq($from: wide) {
+    @include span(9 of 14);
+  }
+}

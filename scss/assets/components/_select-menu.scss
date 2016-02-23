@@ -1,0 +1,78 @@
+.select_menu {
+  max-width:100%;
+  position:relative;
+  padding-bottom: .9375rem;
+  .button.btn-white {
+    padding-left:1rem;
+    padding-right: 2.5rem;
+    font-size:.8em;
+    color:$textGrey;
+    margin-bottom: 0;
+    text-align: left; 
+    width: 100%;
+    &:hover {
+      background:lighten($ghostGrey,2%);
+      border:solid 1px darken($lightGrey,10%);
+      color: $actionBlue;
+    }
+    &:after {
+      position:absolute;
+          font-family: FontAwesome;
+          top:.625rem;
+          right:1rem;
+          content: "\f078";
+    }
+    i.fa {margin-right:.25rem;}
+  }
+  .list_container {
+    position: absolute;
+    left:0;
+    z-index: 9999;
+    display: none;
+    width: 100%;
+    height:auto;
+    max-height: 300px;
+    padding:.9375rem;
+    border:solid 1px darken($lightGrey,10%);
+    background: $white;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+    border-radius: 0 0 .25rem .25rem;
+  }
+  ul, form {
+    margin:0;
+    list-style: none;
+    height:auto;
+    max-height:calc(300px - 1.875rem);
+      overflow: auto;
+    border-top:solid 1px darken($lightGrey,10%);
+    border-bottom:solid 1px darken($lightGrey,10%);
+    li, label {
+      background: $lightGrey;
+      border:solid 1px darken($lightGrey,10%);
+      border-bottom:none;
+      padding: .25rem .5rem;
+      font-size: .8em;
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+      &:hover {
+        background:darken($lightGrey,10%);
+        cursor: pointer;
+      }
+      &:active {
+        background: $actionBlue;
+        color: $white;
+      }
+      &:first-child {
+        border-top: none;
+      }
+      &.selected {
+        background: $actionBlue;
+        color: $white;
+      }
+      input {
+        margin: 0 .25rem 0 0;
+      }
+    }
+  }
+}

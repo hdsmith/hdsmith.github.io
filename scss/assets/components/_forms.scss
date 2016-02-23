@@ -1,0 +1,108 @@
+form.inline {
+  font-size: .8125rem;
+  .form_item {
+    overflow: hidden;
+  }
+  label {
+    display: block;
+    padding:.25rem 0 .25rem 0;
+    min-width:110px;
+    line-height:1.5rem;
+    text-align: left;
+    @include mq($from: tablet) {
+      text-align:right;
+      width:30%;
+      float: left;
+      padding-left: .25rem;
+      padding-right: .8125rem;
+    }
+    @include mq($from: wide) {
+      width:35%;
+    }
+  }
+  input, select {
+    margin-bottom: .25rem;
+    min-height: 30px;
+    background:#f7f7f7;
+    &.half {
+      width:50%;
+      @include mq($from: tablet) {
+        width:25%;
+      }
+    }
+    @include mq($from: tablet) {
+      float: left;
+      width:60%;
+      margin-bottom: .625rem;
+    }
+  }
+  select {
+    @include mq($from:tablet) {
+      margin-bottom:.5rem;
+    }
+  }
+
+
+  .button {width: auto; margin: .25rem 0;}
+  .warning {color: $actionGreen; font-style: italic; line-height: 40px; padding-left: .5rem;}
+  /* Form Validations */
+  .ng-invalid.ng-dirty.ng-invalid-number {@include invalid;}
+  .ng-touched.ng-invalid.ng-invalid-valid-date {@include invalid;}
+  .ng-touched.ng-invalid {@include invalid;}
+
+  input[required], select[required] {background: #fff;}
+  .form_item p.invalid {
+    clear: left;
+    display: block;
+    color:#C43131;
+    font-style: italic; 
+    line-height:1.2;
+    font-size: .8125rem;
+    margin:.5rem 0 0 0;
+    padding: 0;
+    @include mq($from: tablet) {padding-left:30%;margin:0 0 .625rem 0;}
+    @include mq($from: desktop) {padding-left: 30%;}
+    @include mq($from: wide) {padding-left: 35%;}
+  }
+
+}
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    select {width: 100% !important; z-index: 99;}
+    @include mq($from:tablet) {
+      width: 60%;
+    }
+    &:after {
+      content:"\f078";
+      font-family:'FontAwesome';
+      color: #555;
+      font-size:.8165rem;
+      position: absolute;
+      top: .4rem;
+      right: .75rem;
+      pointer-events:none;
+      z-index: 9;
+    }
+}
+ .date-picker {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    input {width: 100% !important; min-height: 33px;}
+    @include mq($from:tablet) {
+      width: 60%;
+      min-height: 33px;
+    }
+    &:after {
+      content:"\f073";
+      font-family:'FontAwesome';
+      color: #555;
+      font-size:1rem;
+      position: absolute;
+      top: .5625rem;
+      right:.75rem;
+
+    }
+}

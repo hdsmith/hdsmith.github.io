@@ -1,0 +1,61 @@
+$mq-responsive: true;
+
+$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  640px,
+    desktop: 960px,
+    wide:    1450px,
+);
+$mq-static-breakpoint: desktop;
+$mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
+
+.media-queries {
+  display: block;
+	position: fixed;
+	bottom: 0;
+	right:0;
+	z-index: 999;
+	i.fa {margin-right: .25rem;}
+	span {
+		padding:.5rem 1rem;
+		color:#fff;
+		&.mobile-only {background:#F39C12;}	
+		&.tablet-only {background:#27AE60;}	
+		&.desktop-only {background:#2980B9;}	
+		&.wide-only {background:#9B59B6;}	
+	}
+}
+
+/* Strict */
+.mobile-only {display: none;@include mq($until: tablet) {display:block;}}
+.tablet-only {display: none;@include mq($from: tablet, $until: desktop) {display:block;}}
+.desktop-only {display: none;@include mq($from: desktop, $until: wide) {display:block;}}
+.wide-only {display: none;@include mq($from: wide) {display:block;}}
+
+/* Mobile */
+.show-sm {@include mq($from: mobile) {display:block;}}
+.hide-sm {@include mq($from: mobile) {display:none;}}
+/* Tablet */
+.show-md {@include mq($from: tablet) {display:block;}}
+.hide-md {@include mq($from: tablet) {display:none;}}
+/* Desktop */
+.show-lg {@include mq($from: desktop) {display:block;}}
+.hide-lg {@include mq($from: desktop) {display:none;}}
+/* Widescreen */
+.show-wide {@include mq($from: wide) {display:block;}}
+.hide-wide {@include mq($from: wide) {display:none;}}
+
+table, thead, tbody, td, th {
+  /* Mobile */
+  .show-sm {@include mq($from: mobile) {display:table-cell;}}
+  .hide-sm {@include mq($from: mobile) {display:none;}}
+  /* Tablet */
+  .show-md {@include mq($from: tablet) {display:table-cell;}}
+  .hide-md {@include mq($from: tablet) {display:none;}}
+  /* Desktop */
+  .show-lg {@include mq($from: desktop) {display:table-cell;}}
+  .hide-lg {@include mq($from: desktop) {display:none;}}
+  /* Widescreen */
+  .show-wide {@include mq($from: wide) {display:table-cell;}}
+  .hide-wide {@include mq($from: wide) {display:none;}}
+}

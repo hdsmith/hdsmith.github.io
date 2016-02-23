@@ -1,0 +1,95 @@
+#container {
+  .noRmaEntriesContainer {
+    @include span(14);
+    p {
+      padding: 1.5rem 2.25rem;
+      margin:1rem 0;
+      font-size: 1rem;
+      line-height: 1.3;
+      font-style: italic;
+      text-align: center;
+      font-weight: 300;
+      color: #9a9a9a;
+      @include mq($from: tablet) {font-size: 1.25rem; padding: 1.5rem 3.5rem; margin:2rem 0;}
+      @include mq($from: desktop) {font-size: 1.5rem;}
+      @include mq($from: wide) {font-size: 1.5rem;}
+    }
+  }
+  .pending_return {
+    background-color:rgba(240,240,240,.4);
+    border-top:solid 1px rgba(240,240,240,.6);
+    z-index: 9998;
+    @include span(14);
+    min-height:50vh;
+    padding:1.5rem .8125rem 4.25rem;
+    @include mq($from: tablet) {padding-bottom:3.25rem; min-height:50vh;}
+    @include mq($from: desktop) {min-height: 40vh;}
+    h3 {
+      @include span(14);
+      padding-left: 0;
+      margin:0 0 .8125rem 0;
+      @include mq($from: tablet) {
+        @include span(7);
+        margin-bottom: 0;
+        padding-left: 0;
+      }
+    }
+    .tableWrapper {
+      .tableDefault {
+        /*height: 30vh;*/
+        @include mq($from:tablet) {height:21rem;}
+        @include mq($from:desktop) {height:18rem;}
+        @media screen and ( min-height:1130px ){height:22.5rem;}
+      }
+    }
+    .rma-lines {
+      display: none;
+      @include mq($from:tablet) {
+        display:inline;
+        position: absolute;
+        left:50%;
+        font-size: .8125rem;
+        font-weight: 700;
+        color:#797979;
+        line-height: 40px;
+        margin-left: -25px;
+      }  
+    }
+    .return_actions {
+      @include span(14);
+      @include mq($from: tablet) {
+         @include span(7);
+         text-align: right;
+      }
+      padding-right: 0;
+      .button {
+        margin-bottom:.75rem;
+        span {
+          /* Hide text for tablet only */
+          @include mq($from: tablet, $until: desktop) {display:none;}
+        }
+        &.printBtn {
+          display: none;
+          @include mq($from:tablet) {display:inline-block;}
+        }
+        &.sendBtn {
+          float: right;
+          @include mq($from: tablet) {
+            float:none;
+          }
+        }
+        &.deleteBtn {
+          border-radius: .25rem;
+          @include mq($from:tablet) {
+            border-radius:.25rem 0 0 .25rem;
+          }
+        }
+      }
+      i.fa {
+        font-size: 1rem; 
+        margin-right: .25rem;
+        @include mq($from: tablet, $until: desktop) {margin-right:0;}
+      }
+    }
+  }
+}

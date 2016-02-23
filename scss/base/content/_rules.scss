@@ -1,0 +1,67 @@
+/* Susy Settings */
+$susy: (
+  columns: 14,
+  gutters: .25,
+  gutter-position: inside,
+);
+* { box-sizing: border-box; }
+html { box-sizing: border-box; }
+* { box-sizing: inherit; }
+html, body{
+  height: 100%;
+  margin: 0;
+  padding:0;
+  font-size:16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a, button {
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+  color: $blue;
+  &:hover {
+    color:lighten($actionBlue,10%);
+  }
+}
+body {
+  font-family:"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin:0; padding:0;
+}
+select, input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    background-color: $white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-family: inherit;
+    font-size: 0.77778rem;
+    height:auto;
+    margin: 0 0 0.88889rem 0;
+    padding: 0.44444rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color 0.15s linear, background 0.15s linear;
+    -moz-transition: border-color 0.15s linear, background 0.15s linear;
+    -ms-transition: border-color 0.15s linear, background 0.15s linear;
+    -o-transition: border-color 0.15s linear, background 0.15s linear;
+    transition: border-color 0.15s linear, background 0.15s linear;
+    outline:none !important;
+    /* Active */
+}
+

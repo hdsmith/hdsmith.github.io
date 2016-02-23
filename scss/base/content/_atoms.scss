@@ -1,0 +1,37 @@
+
+/*
+<span class="chevron top"></span>
+<span class="chevron right"></span>
+<span class="chevron bottom"></span>
+<span class="chevron left"></span>
+*/
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.125rem 0.125rem 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45rem;
+  left: 0.15rem;
+  position: relative;
+  top: 0.15rem;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45rem;
+  /*background: pink;*/
+}
+
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+  left: 0.125rem;
+  transform: rotate(135deg);
+}
+
+.chevron.left:before {
+  left: 0.25rem;
+  transform: rotate(-135deg);
+}

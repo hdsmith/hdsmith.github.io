@@ -1,0 +1,18 @@
+footer.globalFooter {
+  @include span(14);
+  clear:both;
+  position: relative;
+  height: 70px; /* 70px = height of footer when on two lines */
+  padding-left: .8125rem;
+  padding-right: .8125rem;
+  @include mq($from:tablet) {height:51px;} /* 51px = height of footer on one line */
+  p {
+    padding:1rem 0;
+    font-size: .8125rem;
+    margin-bottom:0;
+  }
+  /* Break lines on mobile */
+  .break {@include mq($from:tablet) {display:none;}}
+  /* Show pipe for single line */
+  .pipe {display: none; @include mq($from:tablet) {display:inline;}}
+}

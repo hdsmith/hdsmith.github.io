@@ -1,0 +1,56 @@
+/* Title and Account Selection + Settings & Help */
+header {
+  @include span(14);
+  padding:1rem .8125rem .5rem .8125rem; 
+  h2 {
+    @include span(14);
+    font-size:2rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    margin:0 0 .5rem 0;
+    padding: 0;
+    @include mq($from: tablet) {
+      @include span(6 of 14);
+      padding-left: 0;
+    }
+    @include mq($from: desktop) {
+      @include span(8 of 14);
+      padding-left: 0;
+    }
+  }
+  .choose_account {
+    overflow: visible;
+    @include span(14 of 14);
+    @include mq($from: tablet) {
+      @include span(8 of 14);
+      padding-right: 0;
+    }
+    @include mq($from: desktop) {
+      @include span(6 of 14);
+    }
+    /* Settings and Help Buttons */
+    .buttons {
+      display: none;
+      float: right;
+      width: auto !important;
+      @include mq($from: tablet) {
+        display:inline-block;
+        display: none;
+      }
+    }
+    /* Select Account Menu */
+    .select_menu {
+      padding-bottom: 0;
+      height: 37px;
+      float: left;
+      width: 100%;
+      @include mq($from: tablet) {
+        width: calc(100% - 78px);
+        max-width: 380px;
+        float: right;
+        /*padding-right: .8125rem;*/
+        padding-right: 0;
+      }
+    }
+  }
+}

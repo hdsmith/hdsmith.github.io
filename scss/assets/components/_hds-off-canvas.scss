@@ -1,0 +1,86 @@
+.inner-wrap {min-height: 100vh}
+/* Custom Styles */
+.move-right .exit-off-canvas {
+  background: rgba(0,0,0,0.4) !important;
+  min-height: 100vh;
+}
+.move-left .exit-off-canvas {
+  background: rgba(0,0,0,0.4) !important;
+}
+.right-off-canvas-toggle {padding:0 .9375rem !important;}
+.right-off-canvas-menu, .left-off-canvas-menu {
+  background:darken($brandGreen,2%) !important;
+  display: none;
+  ul {
+    padding:38px 0 0 0;
+    margin: 0;
+    line-height: inherit;
+    li {
+      list-style: none;
+      margin-bottom: 1px;
+      text-transform: uppercase;
+      a {
+        background:lighten($brandGreen,3%);
+        text-transform: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight:400;
+        font-size: .9375rem;
+        padding: .5rem 1rem;
+        border-bottom: none !important;
+        text-decoration: none;
+        display: block;
+        &:hover {
+          background:lighten($brandGreen,5%) !important;
+          color: rgba(255, 255, 255, 1);
+        }
+        &:active {
+          background:lighten($brandGreen,5%) !important;
+          color: rgba(255, 255, 255, 1);
+        }
+        i {margin-right: 5px;}
+      }
+      &.has-submenu {
+        > a:after {
+          font-family:FontAwesome;
+          content: "\f105" !important;
+        }
+        .left-submenu {
+          padding-top: 0;
+          margin-top: 0;
+          background:darken($brandGreen,3%) !important;
+          height: 100%;
+          li {
+            /* nothing */
+            &.back {
+              /* nothing */
+              a {
+                color: rgba(255, 255, 255, 0.7);
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 0.875rem;
+                border-top:none;
+                background:darken($brandGreen,2%);
+                padding: .5rem 1rem .4rem 1rem;
+                &:before  {
+                  font-family:FontAwesome;
+                  content: "\f104";
+                  margin-right: 0.5rem;
+                  display: inline;
+                }
+              }
+            }
+          } 
+        }
+      }
+    }
+  }
+}
+.right-off-canvas-menu {
+  ul li li a {padding-left:.875rem;}
+}
+.off-canvas-wrap.move-left {
+  .right-off-canvas-menu {display: block;}
+}
+.off-canvas-wrap.move-right {
+  .left-off-canvas-menu {display: block;}
+}

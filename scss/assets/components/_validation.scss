@@ -1,0 +1,102 @@
+/* Notification Colors */
+$successGreen:rgba(61,192,77,1);
+$warningYellow:rgba(245,170,56,1);
+$infoBlue:rgba(42,131,221,1);
+$errorRed:rgba(197,40,45,1);
+
+/* Notification Colors with Alpha Channels */
+@mixin success-green ($alpha) {background-color:rgba(61,192,77,$alpha);}
+@mixin warning-yellow ($alpha) {background-color:rgba(245,170,56,$alpha);}
+@mixin info-blue ($alpha) {background-color:rgba(42,131,221,$alpha);}
+@mixin error-red ($alpha) {background-color:rgba(197,40,45,$alpha);}
+
+/* ng-animate for messages */
+.success.ng-enter, 
+.success.ng-leave {transition:.7s linear all;}
+
+.success.ng-enter,
+.success.ng-leave.ng-leave-active {opacity:0;}
+
+.success.ng-leave,
+.success.ng-enter.ng-enter-active {opacity:1;}
+
+.messages {
+  padding-left: .9375rem;
+  padding-right: .9375rem;
+  overflow: hidden;
+  @include mq($from: tablet) { 
+    padding-left: .8125rem;
+    padding-right: .8125rem;
+  }
+}
+.notifications {
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 9999;
+    width: 100%;
+    padding:.8125rem;
+  @include mq($from: tablet) { 
+    width: 40%;
+  }
+  @include mq($from: desktop) { 
+    width: 30%;
+  }
+  @include mq($from: wide) { 
+    width: 25%;
+  }
+}
+.notice {
+    clear: both;
+    background-color:$ghostGrey;
+    padding: 1.25rem 3.125rem 1.25rem 1.25rem;
+    margin: 0 0 .8125rem 0;
+    position: relative;
+    color:$white;
+    font-weight: 300;
+    font-size: 0.875rem;
+    background-image: url('../images/polygons-gray/polygons-gray-tl-10.png'); 
+    background-repeat: no-repeat;
+    background-position: -200px -30px;
+    background-size: 50%;
+    &.notify {
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+      border-radius: .25rem;
+      margin-bottom: .8125rem;
+      p {margin-bottom: 0; font-size: .9em;}
+      input {margin:.6125rem 0 0 0;}
+      &.plain {
+        background: rgba(0,0,0,.7) !important;
+        color: $white;
+        .dismiss {color: $white;}
+      }
+      .dismiss {top:0; right:.25rem;}
+    }
+  &.plain {background:darken($ghostGrey, 5%); color: $textGrey;
+    .dismiss {
+      color: $textGrey;
+    }
+  }
+  &.info {
+    @include info-blue(.95);
+  }
+  &.warning {
+    @include warning-yellow(.95);
+  }
+  &.error {
+    @include error-red(.95);
+  }
+  &.success {
+    @include success-green(.95);
+  }
+  p {color: inherit; font-size: inherit; line-height: inherit; margin:0 0 .5rem 0;}
+  ul {color: inherit; font-size: inherit; line-height: inherit; margin:0 0 .5rem 1rem; padding: 0; font-weight: 400;}
+  .dismiss {
+    position: absolute;
+    padding: 0.625rem;
+    right: 0.3125rem;
+    top: 0.125rem;
+    color: $white;
+    font-weight: 700;
+  }
+}
