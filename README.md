@@ -1,2 +1,6 @@
 # hdsmith.github.io
-Pattern Library
+-------------------
+H. D. Smith Pattern Library
+
+
+
