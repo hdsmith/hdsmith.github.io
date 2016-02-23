@@ -93,26 +93,32 @@ footer {
     }
     padding-left:.8125rem;
     padding-right:.8125rem;
+    &.first {@include mq($from:desktop) {@include span(6);}}
+    &.second {}
     aside {
       @include span(14);
       @include mq($from:desktop) {@include span(7);}
       .social {
         max-width: 60%;
-        margin: 0 0 1.25rem 0;
+        margin:.3125rem 0 1.25rem 0;
         @include mq($from:tablet) {max-width:90%;}
-        @include mq($from:desktop) {max-width:60%;}
+        @include mq($from:desktop) {max-width:70%;}
         @include mq($from:wide) {max-width:70%;}
       }
-      &.col1 {/*background: aqua;*/}
-      &.col2 {/*background: pink;*/}
+      &.col1 {/*background: aqua;*/
+
+      }
+      &.col2 {/*background: pink;*/
+        /*@include mq($from:desktop) {@include span(5);}*/
+      }
       &.col3 {/*background: orange;*/
-        @include mq($from:desktop) {@include span(14);}
-        @include mq($from:wide) {@include span(7);}
+       /* @include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(7);}*/
       }
       &.col4 {
         /*background: lime;*/
-        @include mq($from:desktop) {@include span(14);}
-        @include mq($from:wide) {@include span(6);}
+        /*@include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(6);}*/
       }
     }
   }

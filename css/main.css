@@ -3886,8 +3886,11 @@ header {
   background-position: right bottom;
   background-size: 200%;
   flex: 1;
+  -webkit-flex: 1;
   display: flex;
-  flex-direction: column; }
+  -webkit-display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column; }
   @media (min-width: 40em) {
     #Page {
       background-size: 150%; } }
@@ -3910,6 +3913,7 @@ header {
     /* margin-bottom: -70px;  70px = height of footer on Mobile */
     display: inherit;
     flex-grow: 1;
+    -webkit-flex-grow: 1;
     min-height: 30%; }
     @media (min-width: 40em) {
       #Page section#main {
@@ -4052,6 +4056,15 @@ footer {
         float: left;
         padding-left: 0.71429%;
         padding-right: 0.71429%; } }
+    @media (min-width: 60em) {
+      footer section.first {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 42.85714%;
+        float: left;
+        padding-left: 0.71429%;
+        padding-right: 0.71429%; } }
     footer section aside {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -4071,60 +4084,29 @@ footer {
           padding-right: 0.71429%; } }
       footer section aside .social {
         max-width: 60%;
-        margin: 0 0 1.25rem 0; }
+        margin: .3125rem 0 1.25rem 0; }
         @media (min-width: 40em) {
           footer section aside .social {
             max-width: 90%; } }
         @media (min-width: 60em) {
           footer section aside .social {
-            max-width: 60%; } }
+            max-width: 70%; } }
         @media (min-width: 90.625em) {
           footer section aside .social {
             max-width: 70%; } }
       footer section aside.col1 {
         /*background: aqua;*/ }
       footer section aside.col2 {
-        /*background: pink;*/ }
+        /*background: pink;*/
+        /*@include mq($from:desktop) {@include span(5);}*/ }
       footer section aside.col3 {
-        /*background: orange;*/ }
-        @media (min-width: 60em) {
-          footer section aside.col3 {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            width: 100%;
-            float: left;
-            padding-left: 0.71429%;
-            padding-right: 0.71429%; } }
-        @media (min-width: 90.625em) {
-          footer section aside.col3 {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            width: 50%;
-            float: left;
-            padding-left: 0.71429%;
-            padding-right: 0.71429%; } }
+        /*background: orange;*/
+        /* @include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(7);}*/ }
       footer section aside.col4 {
-        /*background: lime;*/ }
-        @media (min-width: 60em) {
-          footer section aside.col4 {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            width: 100%;
-            float: left;
-            padding-left: 0.71429%;
-            padding-right: 0.71429%; } }
-        @media (min-width: 90.625em) {
-          footer section aside.col4 {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            width: 42.85714%;
-            float: left;
-            padding-left: 0.71429%;
-            padding-right: 0.71429%; } }
+        /*background: lime;*/
+        /*@include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(6);}*/ }
   footer .copyright {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

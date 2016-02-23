@@ -12,8 +12,11 @@
   @include mq($from: wide) {background-size:65%;}
 
   flex: 1;
+  -webkit-flex: 1;
   display: flex;
+  -webkit-display: flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
 
   header#header {
    flex:1% 0 0; 
@@ -33,6 +36,7 @@
     
     display: inherit;
     flex-grow: 1;
+    -webkit-flex-grow: 1;
     min-height: 30%;
     
     .content {
