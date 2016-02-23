@@ -1,6 +1,5 @@
-
-#container {
-  height: 100%;
+#Page {
+  /*height: 100%;*/
   min-height: 100vh;
   overflow: hidden;
   /* Polygons Bottom Right */
@@ -11,17 +10,28 @@
   @include mq($from: tablet) {background-size:150%;}
   @include mq($from: desktop) {background-size:75%;}
   @include mq($from: wide) {background-size:65%;}
-  .wrapper {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  header#header {
+   flex:1% 0 0; 
+  }
+  section#main {
     overflow: hidden;
     /* Polygons Top Left */
     background-image: url('../images/polygons-gray/polygons-gray-tl-10.png');
     background-repeat: no-repeat;
     background-position: left top;
     background-size:200%;
-    min-height:calc(100vh - 50px); /* 50px = height of top header for mobile and tablet */
-    margin-bottom: -70px; /* 70px = height of footer on Mobile */
-    @include mq($from: tablet) {background-size:150%; margin-bottom: -51px; /* 51px = height of footer on single line */ }
-    @include mq($from: desktop) {background-size:75%; min-height: calc(100vh - 106px); /* 106px = hight of top header on desktop */}
+    /* min-height:calc(100vh - 50px);  50px = height of top header for mobile and tablet */
+    /* margin-bottom: -70px;  70px = height of footer on Mobile */
+    @include mq($from: tablet) {background-size:150%; /* margin-bottom: -51px;  51px = height of footer on single line */ }
+    @include mq($from: desktop) {background-size:75%; /* min-height: calc(100vh - 106px); 106px = hight of top header on desktop */}
     @include mq($from: wide) {background-size:65%;}
+    flex: 1 1 0; 
+  }
+  footer#footer {
+   flex: 1% 0 0; 
   }
 }

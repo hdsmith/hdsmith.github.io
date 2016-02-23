@@ -1,4 +1,4 @@
-#top_header {
+header {
   a {text-decoration: none; cursor: pointer;}
   .global {
     background: $brandGreen;
@@ -9,7 +9,6 @@
     }
     .logo {
       width:auto;
-      
       margin:.5rem auto 0 auto;
       max-width: 100%;
       height:2rem;

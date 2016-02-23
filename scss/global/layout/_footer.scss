@@ -1,18 +1,124 @@
-footer.globalFooter {
+footer {
+  background-color:darken($ghostGrey,0%);
+  background-image: url('/images/polygons-gray/polygons-gray-tl-10.png'),url('/images/polygons-gray/polygons-gray-tr-10.png');
+  background-repeat: no-repeat,no-repeat;
+  background-position: left top,right top;
+  background-size: 50%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   @include span(14);
   clear:both;
   position: relative;
-  height: 70px; /* 70px = height of footer when on two lines */
-  padding-left: .8125rem;
-  padding-right: .8125rem;
-  @include mq($from:tablet) {height:51px;} /* 51px = height of footer on one line */
-  p {
-    padding:1rem 0;
+  h1 {
+    color: $brandGreen; 
     font-size: .8125rem;
-    margin-bottom:0;
+    display: block;
+    font-weight:600;
+    line-height: 2.125rem;
+    background: url(../images/hdsmith-logo-green.svg) no-repeat .8125rem 0;
+    height: 34px;
+    @include span(14);
+    padding-left: 59px;
+    @include mq($from:tablet) {
+      font-size: 1.125rem;
+      font-weight:600;
+      line-height: 3.6875rem;
+      background: url(../images/hdsmith-logo-green.svg) no-repeat .8125rem 0;
+      height: 59px;
+      padding-left: 95px;
+    }
+    @include mq($from:desktop) { 
+      font-size: 1.125rem;
+      font-weight:600;
+      line-height: 3.6875rem;
+      background: url(../images/hdsmith-logo-green.svg) no-repeat .8125rem 0;
+      height: 59px;
+      padding-left: 95px;
+    }
   }
-  /* Break lines on mobile */
-  .break {@include mq($from:tablet) {display:none;}}
-  /* Show pipe for single line */
-  .pipe {display: none; @include mq($from:tablet) {display:inline;}}
+  h3 {
+    font-size: 1em;
+    line-height: 1.875rem;
+    margin-bottom: 0.25em;
+    font-weight: 400;
+    color: $textGrey;
+  }
+  h3 + p {
+    font-size: 0.8em;
+    color:$textLight;
+    margin-bottom: 2em;
+    font-weight: 400;
+  }
+  p {
+    padding-right: 1rem;
+    a {
+      color: $blue;
+      &:hover {color:$actionGreen;}
+    }
+  }
+  .fa {
+      display: inline-block;
+      width: 30%;
+      height: 34px;
+      background:darken($ghostGrey,5%);
+      line-height: 36px;
+      color:$textLight;
+      text-align: center;
+      font-size: 1.125em;
+      &:hover {
+        background:$actionGreen;
+        color:$white;
+      }
+      @include mq($from:tablet) {
+        line-height: 52px;
+        height: 50px;
+        font-size: 1.3em;
+      }
+      @include mq($from:desktop) {
+        line-height: 55px;
+        height: 50px;
+        font-size: 1.3em;
+      }
+    }
+    small {
+      font-size: 0.8125rem;
+      margin-bottom: 0.5rem;
+      color:$textLight;
+    }
+  section {
+    overflow: hidden;
+    @include span(14);
+    @include mq($from:tablet) {
+      @include span(7);
+    }
+    padding-left:.8125rem;
+    padding-right:.8125rem;
+    aside {
+      @include span(14);
+      @include mq($from:desktop) {@include span(7);}
+      .social {
+        max-width: 60%;
+        margin: 0 0 1.25rem 0;
+        @include mq($from:tablet) {max-width:90%;}
+        @include mq($from:desktop) {max-width:60%;}
+        @include mq($from:wide) {max-width:70%;}
+      }
+      &.col1 {/*background: aqua;*/}
+      &.col2 {/*background: pink;*/}
+      &.col3 {/*background: orange;*/
+        @include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(7);}
+      }
+      &.col4 {
+        /*background: lime;*/
+        @include mq($from:desktop) {@include span(14);}
+        @include mq($from:wide) {@include span(6);}
+      }
+    }
+  }
+  .copyright {
+    @include span(14);
+    padding-left:.8125rem;
+    padding-right:.8125rem;
+  }
 }
