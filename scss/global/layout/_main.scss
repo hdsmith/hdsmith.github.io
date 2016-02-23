@@ -11,9 +11,10 @@
   @include mq($from: desktop) {background-size:75%;}
   @include mq($from: wide) {background-size:65%;}
 
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   header#header {
    flex:1% 0 0; 
   }
@@ -29,7 +30,21 @@
     @include mq($from: tablet) {background-size:150%; /* margin-bottom: -51px;  51px = height of footer on single line */ }
     @include mq($from: desktop) {background-size:75%; /* min-height: calc(100vh - 106px); 106px = hight of top header on desktop */}
     @include mq($from: wide) {background-size:65%;}
-    flex: 1 1 0; 
+    
+    display: inherit;
+    flex-grow: 1;
+    min-height: 30%;
+    
+    .content {
+      padding:1.625rem;
+      padding-bottom: 3rem;
+      overflow-x:scroll;
+      /*background: lime;*/
+      overflow-y:auto;
+     @include mq($from:tablet) {width:80%;} 
+     @include mq($from:desktop) {width:70%;} 
+     @include mq($from:wide) {width:60%;} 
+    }
   }
   footer#footer {
    flex: 1% 0 0; 

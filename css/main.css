@@ -3676,12 +3676,13 @@ pre {
 
 code {
   font-family: 'PT Mono', Mono;
-  border: none;
-  background: none;
+  background: transparent;
   color: #555555;
-  background: #EEEEEE;
+  background: none;
+  border: none;
   font-weight: 300;
-  font-size: .9em; }
+  font-size: .9em;
+  padding: 0; }
 
 /*
 <span class="chevron top"></span>
@@ -3884,9 +3885,9 @@ header {
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 200%;
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  flex-direction: column; }
   @media (min-width: 40em) {
     #Page {
       background-size: 150%; } }
@@ -3907,7 +3908,9 @@ header {
     background-size: 200%;
     /* min-height:calc(100vh - 50px);  50px = height of top header for mobile and tablet */
     /* margin-bottom: -70px;  70px = height of footer on Mobile */
-    flex: 1 1 0; }
+    display: inherit;
+    flex-grow: 1;
+    min-height: 30%; }
     @media (min-width: 40em) {
       #Page section#main {
         background-size: 150%;
@@ -3919,6 +3922,21 @@ header {
     @media (min-width: 90.625em) {
       #Page section#main {
         background-size: 65%; } }
+    #Page section#main .content {
+      padding: 1.625rem;
+      padding-bottom: 3rem;
+      overflow-x: scroll;
+      /*background: lime;*/
+      overflow-y: auto; }
+      @media (min-width: 40em) {
+        #Page section#main .content {
+          width: 80%; } }
+      @media (min-width: 60em) {
+        #Page section#main .content {
+          width: 70%; } }
+      @media (min-width: 90.625em) {
+        #Page section#main .content {
+          width: 60%; } }
   #Page footer#footer {
     flex: 1% 0 0; }
 

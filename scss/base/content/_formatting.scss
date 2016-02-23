@@ -129,10 +129,11 @@ pre {
 }
 code {
   font-family: 'PT Mono', Mono;
-  border: none;
-  background: none;
+  background: transparent;
   color:$textGrey;
-  background: $lightGrey;
+  background:none;
+  border:none;
   font-weight: 300;
   font-size: .9em;
+  padding:0;
 }
