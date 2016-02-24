@@ -3876,247 +3876,54 @@ header {
           width: 0;
           z-index: 2; }
 
-#Page {
-  /*height: 100%;*/
-  min-height: 100vh;
-  overflow: hidden;
-  /* Polygons Bottom Right */
-  background-image: url("../images/polygons-gray/polygons-gray-br-10.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 200%;
-  flex: 1;
-  -webkit-flex: 1;
+#page {
   display: flex;
-  -webkit-display: flex;
+  height: 100%;
+  /* 1, 3 */
+  flex-direction: column; }
+
+header.page-header,
+footer.page-footer {
+  flex: none;
+  /* 2 */
+  padding: 1.5em;
+  background-color: rgba(147, 128, 108, 0.1);
+  text-align: center; }
+
+section.page-section {
+  display: flex;
+  flex: 1 0 auto;
+  /* 2 */
   flex-direction: column;
-  -webkit-flex-direction: column; }
-  @media (min-width: 40em) {
-    #Page {
-      background-size: 150%; } }
+  padding: 1.5em; }
   @media (min-width: 60em) {
-    #Page {
-      background-size: 75%; } }
-  @media (min-width: 90.625em) {
-    #Page {
-      background-size: 65%; } }
-  #Page header#header {
-    flex: 1% 0 0; }
-  #Page section#main {
-    overflow: hidden;
-    /* Polygons Top Left */
-    background-image: url("../images/polygons-gray/polygons-gray-tl-10.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 200%;
-    /* min-height:calc(100vh - 50px);  50px = height of top header for mobile and tablet */
-    /* margin-bottom: -70px;  70px = height of footer on Mobile */
-    display: inherit;
-    flex-grow: 1;
-    -webkit-flex-grow: 1;
-    min-height: 30%; }
-    @media (min-width: 40em) {
-      #Page section#main {
-        background-size: 150%;
-        /* margin-bottom: -51px;  51px = height of footer on single line */ } }
+    section.page-section {
+      flex-direction: row; } }
+  section.page-section .content {
+    margin-top: 1.5em; }
     @media (min-width: 60em) {
-      #Page section#main {
-        background-size: 75%;
-        /* min-height: calc(100vh - 106px); 106px = hight of top header on desktop */ } }
-    @media (min-width: 90.625em) {
-      #Page section#main {
-        background-size: 65%; } }
-    #Page section#main .content {
-      padding: 1.625rem;
-      padding-bottom: 3rem;
-      overflow-x: scroll;
-      /*background: lime;*/
-      overflow-y: auto; }
-      @media (min-width: 40em) {
-        #Page section#main .content {
-          width: 80%; } }
-      @media (min-width: 60em) {
-        #Page section#main .content {
-          width: 70%; } }
-      @media (min-width: 90.625em) {
-        #Page section#main .content {
-          width: 60%; } }
-  #Page footer#footer {
-    flex: 1% 0 0; }
+      section.page-section .content {
+        flex: 1;
+        padding: 0 2em;
+        margin: 0; } }
+  section.page-section nav {
+    order: -1; }
+  section.page-section nav, section.page-section aside {
+    padding: 1em;
+    border-radius: 3px;
+    background: rgba(147, 128, 108, 0.1); }
+    @media (min-width: 60em) {
+      section.page-section nav, section.page-section aside {
+        flex: 0 0 12em; } }
 
 footer {
-  background-color: #f6f6f6;
-  background-image: url("/images/polygons-gray/polygons-gray-tl-10.png"), url("/images/polygons-gray/polygons-gray-tr-10.png");
-  background-repeat: no-repeat,no-repeat;
-  background-position: left top,right top;
-  background-size: 50%;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   float: left;
   padding-left: 0.71429%;
-  padding-right: 0.71429%;
-  clear: both;
-  position: relative; }
-  footer h1 {
-    color: #00703c;
-    font-size: .8125rem;
-    display: block;
-    font-weight: 600;
-    line-height: 2.125rem;
-    background: url(../images/hdsmith-logo-green.svg) no-repeat 0.8125rem 0;
-    height: 34px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    float: left;
-    padding-left: 0.71429%;
-    padding-right: 0.71429%;
-    padding-left: 59px; }
-    @media (min-width: 40em) {
-      footer h1 {
-        font-size: 1.125rem;
-        font-weight: 600;
-        line-height: 3.6875rem;
-        background: url(../images/hdsmith-logo-green.svg) no-repeat 0.8125rem 0;
-        height: 59px;
-        padding-left: 95px; } }
-    @media (min-width: 60em) {
-      footer h1 {
-        font-size: 1.125rem;
-        font-weight: 600;
-        line-height: 3.6875rem;
-        background: url(../images/hdsmith-logo-green.svg) no-repeat 0.8125rem 0;
-        height: 59px;
-        padding-left: 95px; } }
-  footer h3 {
-    font-size: 1em;
-    line-height: 1.875rem;
-    margin-bottom: 0.25em;
-    font-weight: 400;
-    color: #555555; }
-  footer h3 + p {
-    font-size: 0.8em;
-    color: #999999;
-    margin-bottom: 2em;
-    font-weight: 400; }
-  footer p {
-    padding-right: 1rem; }
-    footer p a {
-      color: #3e7bb8; }
-      footer p a:hover {
-        color: #94C146; }
-  footer .fa {
-    display: inline-block;
-    width: 30%;
-    height: 34px;
-    background: #e9e9e9;
-    line-height: 36px;
-    color: #999999;
-    text-align: center;
-    font-size: 1.125em; }
-    footer .fa:hover {
-      background: #94C146;
-      color: #ffffff; }
-    @media (min-width: 40em) {
-      footer .fa {
-        line-height: 52px;
-        height: 50px;
-        font-size: 1.3em; } }
-    @media (min-width: 60em) {
-      footer .fa {
-        line-height: 55px;
-        height: 50px;
-        font-size: 1.3em; } }
-  footer small {
-    font-size: 0.8125rem;
-    margin-bottom: 0.5rem;
-    color: #999999; }
-  footer section {
-    overflow: hidden;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    float: left;
-    padding-left: 0.71429%;
-    padding-right: 0.71429%;
-    padding-left: .8125rem;
-    padding-right: .8125rem; }
-    @media (min-width: 40em) {
-      footer section {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 50%;
-        float: left;
-        padding-left: 0.71429%;
-        padding-right: 0.71429%; } }
-    @media (min-width: 60em) {
-      footer section.first {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 42.85714%;
-        float: left;
-        padding-left: 0.71429%;
-        padding-right: 0.71429%; } }
-    footer section aside {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 100%;
-      float: left;
-      padding-left: 0.71429%;
-      padding-right: 0.71429%; }
-      @media (min-width: 60em) {
-        footer section aside {
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          width: 50%;
-          float: left;
-          padding-left: 0.71429%;
-          padding-right: 0.71429%; } }
-      footer section aside .social {
-        max-width: 60%;
-        margin: .3125rem 0 1.25rem 0; }
-        @media (min-width: 40em) {
-          footer section aside .social {
-            max-width: 90%; } }
-        @media (min-width: 60em) {
-          footer section aside .social {
-            max-width: 70%; } }
-        @media (min-width: 90.625em) {
-          footer section aside .social {
-            max-width: 70%; } }
-      footer section aside.col1 {
-        /*background: aqua;*/ }
-      footer section aside.col2 {
-        /*background: pink;*/
-        /*@include mq($from:desktop) {@include span(5);}*/ }
-      footer section aside.col3 {
-        /*background: orange;*/
-        /* @include mq($from:desktop) {@include span(14);}
-        @include mq($from:wide) {@include span(7);}*/ }
-      footer section aside.col4 {
-        /*background: lime;*/
-        /*@include mq($from:desktop) {@include span(14);}
-        @include mq($from:wide) {@include span(6);}*/ }
-  footer .copyright {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    float: left;
-    padding-left: 0.71429%;
-    padding-right: 0.71429%;
-    padding-left: .8125rem;
-    padding-right: .8125rem; }
+  padding-right: 0.71429%; }
 
 .tableDefault {
   width: 100%;
