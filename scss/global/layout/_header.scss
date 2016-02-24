@@ -1,3 +1,7 @@
-#header {
-  @include span(14);
+header.page-header {
+ background: lighten($ghostGrey,1%);
+ 
+ h1 {
+  color:$brandGreen;
+ }
 }

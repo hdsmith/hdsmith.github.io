@@ -1,38 +1,69 @@
 #page {
   display: flex;
-  height: 100%; /* 1, 3 */
+  min-height: 100%; /* 1, 3 */
   flex-direction: column;
 }
-
-header.page-header,
-footer.page-footer {
-  flex: none; /* 2 */
-  padding: 1.5em;
-  background-color: rgba(147,128,108,.1);
-  text-align: center;
-}
-
-section.page-section {
-  display: flex;
-  flex: 1 0 auto; /* 2 */
-  flex-direction: column;
-  padding: 1.5em;
-  @include mq($from:desktop) {flex-direction: row;}
-  .content {
-    margin-top: 1.5em;
-    @include mq($from:desktop) { 
-      flex: 1;
-      padding: 0 2em;
-      margin: 0;
+header.page-header {
+  position: fixed;
+  top: 0;
+  width: 15rem;
+  height: 6rem;
+  border-right: 1px solid $ghostGrey;
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    height: 100%;
+    line-height: 6rem;
+    padding-left:5.375rem;
+    margin:0;
+    img {
+      position: absolute;
+      max-width:3.75rem;
+      left:1rem;
+      top:1.25rem;
     }
   }
-  nav {order: -1;}
-  nav,aside {
-    padding: 1em;
-    border-radius: 3px;
-    background: rgba(147, 128, 108, 0.1);
-    @include mq($from:desktop) { flex: 0 0 12em;}
+}
+footer.page-footer {
+  margin-left: 15rem;
+  padding: 1rem;
+  background: rgba(238,241,246,0.3);
+  height: 3.125rem;
+}
+section.page-section {
+  min-height: calc(100vh - 3.125rem);
+  flex: 1 1 auto;
+  margin-left: 15rem;
+  padding:1.5rem 3rem;
+}
+nav.main-nav {
+  position: fixed;
+  top: 6rem;
+  bottom: 0;
+  border-right: 1px solid $ghostGrey;
+  padding-top: 0;
+  width: 15rem;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-bottom: 1.5rem;
+  font-size: .9rem;
+  a {
+    background: lighten($ghostGrey,5%);
+    display: block;
+    padding: 0.625rem 1.5rem;
+    margin-bottom:1px;
+    color:$textLight;
+    position: relative;
+    &:after {
+      content:"⟩";
+      position: absolute;
+      right:1.25rem;
+      font-weight: 700;
+    }
+    &:hover {
+      background: lighten($ghostGrey,1%);
+      color:$lightGreen;
+    }
   }
 }
-
 
